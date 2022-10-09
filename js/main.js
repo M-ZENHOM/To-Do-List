@@ -69,7 +69,7 @@ function createTask(listsArr) {
     }
     list.setAttribute("data-id", task.id);
     let delBtn = document.createElement("i");
-    delBtn.className = "fa-solid fa-trash del";
+    delBtn.className = "bi bi-trash3-fill del";
     list.appendChild(document.createTextNode(task.title));
     list.appendChild(delBtn);
     listResult.appendChild(list);
