@@ -1,6 +1,7 @@
 let input = document.querySelector("[type='text']");
 let addBtn = document.querySelector(".add");
 let listResult = document.querySelector(".list-result");
+let container = document.querySelector(".list-container");
 
 let listsArr = [];
 
@@ -32,6 +33,20 @@ listResult.addEventListener("click", (e) => {
     e.target.classList.toggle("done");
   }
 });
+let clearAll = document.querySelector(".clear");
+// clearAll.className = "clear";
+// clearAll.textContent = "Clear All";
+// container.appendChild(clearAll);
+clearAll.addEventListener("click", () => {
+  listResult.innerHTML = "";
+  localStorage.removeItem("tasks");
+});
+if (listsArr.length >= 3) {
+  clearAll.classList.add("all");
+} else {
+  clearAll.classList.remove("all");
+}
+
 function toggleTask(taskId) {
   for (let i = 0; i < listsArr.length; i++) {
     if (listsArr[i].id == taskId) {

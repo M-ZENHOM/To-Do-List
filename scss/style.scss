@@ -5,6 +5,20 @@
 .list-container {
   @include flexCentering;
   margin-top: 100px;
+  & .clear {
+    width: 200px;
+  }
+  button {
+    width: 60px;
+    height: 40px;
+    background-color: $dark-color;
+    color: $bg-color;
+    cursor: pointer;
+    transition: $trans;
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
   & .list-input {
     input {
       @media (max-width: 767px) {
@@ -21,20 +35,12 @@
         text-transform: uppercase;
       }
     }
-    button {
-      width: 60px;
-      height: 40px;
-      background-color: $dark-color;
-      color: $bg-color;
-      cursor: pointer;
-      transition: $trans;
-      &:hover {
-        background-color: $hover-color;
-      }
-    }
   }
   & .list-result {
     & div {
+      &.done {
+        opacity: 0.5;
+      }
       @media (max-width: 767px) {
         width: 315px;
       }
